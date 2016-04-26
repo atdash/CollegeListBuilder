@@ -1,0 +1,6 @@
+framework module Pods_RealmSwiftPlayground {
+  umbrella header "Pods-RealmSwiftPlayground-umbrella.h"
+
+  export *
+  module * { export * }
+}

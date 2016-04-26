@@ -1,0 +1,5 @@
+use_frameworks!
+
+target 'RealmSwiftPlayground' do
+pod 'RealmSwift'
+end

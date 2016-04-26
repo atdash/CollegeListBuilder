@@ -7,14 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		925668A0B86703CE8FD4BDD6 /* Pods_ToDoListATDash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E9DBA01E3D819809B9E3BB2 /* Pods_ToDoListATDash.framework */; };
 		E136B4941CB856420067B7AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E136B4931CB856420067B7AE /* AppDelegate.swift */; };
 		E136B4961CB856420067B7AE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E136B4951CB856420067B7AE /* ViewController.swift */; };
 		E136B4991CB856420067B7AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E136B4971CB856420067B7AE /* Main.storyboard */; };
 		E136B49B1CB856420067B7AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E136B49A1CB856420067B7AE /* Assets.xcassets */; };
 		E136B49E1CB856420067B7AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E136B49C1CB856420067B7AE /* LaunchScreen.storyboard */; };
+		E1593E871CB95F0E002735CA /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1593E851CB95F0E002735CA /* Task.swift */; };
+		E1593E891CB96FD9002735CA /* TaskList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1593E881CB96FD9002735CA /* TaskList.swift */; };
+		E1593E8B1CB98ECB002735CA /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1593E8A1CB98ECB002735CA /* TasksViewController.swift */; };
+		E1593E8D1CB98EEA002735CA /* TaskListsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1593E8C1CB98EEA002735CA /* TaskListsViewController.swift */; };
+		E1D2E05F1CCE6EA5009E4439 /* College.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D2E05E1CCE6EA5009E4439 /* College.swift */; };
+		E1D2E0611CCE6EBB009E4439 /* CollegeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D2E0601CCE6EBB009E4439 /* CollegeList.swift */; };
+		E1D2E0651CCE72B5009E4439 /* CollegeFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D2E0641CCE72B5009E4439 /* CollegeFields.swift */; };
+		E1D2E0671CCE732A009E4439 /* CollegeControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D2E0661CCE732A009E4439 /* CollegeControl.swift */; };
+		E1D2E06B1CCE7478009E4439 /* FieldExamsRequired.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D2E06A1CCE7478009E4439 /* FieldExamsRequired.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8E9DBA01E3D819809B9E3BB2 /* Pods_ToDoListATDash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToDoListATDash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B119410CCCAB65E04E82E78B /* Pods-ToDoListATDash.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDoListATDash.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ToDoListATDash/Pods-ToDoListATDash.debug.xcconfig"; sourceTree = "<group>"; };
 		E136B4901CB856420067B7AE /* ToDoListATDash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoListATDash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E136B4931CB856420067B7AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E136B4951CB856420067B7AE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +34,18 @@
 		E136B49A1CB856420067B7AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E136B49D1CB856420067B7AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E136B49F1CB856420067B7AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1593E851CB95F0E002735CA /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Task.swift; path = ../ToDoListATDash/Model/Task.swift; sourceTree = "<group>"; };
+		E1593E881CB96FD9002735CA /* TaskList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TaskList.swift; path = ToDoListATDash/Model/TaskList.swift; sourceTree = SOURCE_ROOT; };
+		E1593E8A1CB98ECB002735CA /* TasksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
+		E1593E8C1CB98EEA002735CA /* TaskListsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListsViewController.swift; sourceTree = "<group>"; };
+		E1593E901CBBC203002735CA /* KeepMe.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = KeepMe.playground; path = ../../KeepMe.playground; sourceTree = "<group>"; };
+		E1593E911CBC3473002735CA /* A Swift Tour Playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = "A Swift Tour Playground.playground"; path = "../../A Swift Tour Playground.playground"; sourceTree = "<group>"; };
+		E1D2E05E1CCE6EA5009E4439 /* College.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = College.swift; path = ToDoListATDash/Model/College.swift; sourceTree = SOURCE_ROOT; };
+		E1D2E0601CCE6EBB009E4439 /* CollegeList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CollegeList.swift; path = ToDoListATDash/Model/CollegeList.swift; sourceTree = SOURCE_ROOT; };
+		E1D2E0641CCE72B5009E4439 /* CollegeFields.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CollegeFields.swift; path = ToDoListATDash/Model/CollegeFields.swift; sourceTree = SOURCE_ROOT; };
+		E1D2E0661CCE732A009E4439 /* CollegeControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CollegeControl.swift; path = ToDoListATDash/Model/CollegeControl.swift; sourceTree = SOURCE_ROOT; };
+		E1D2E06A1CCE7478009E4439 /* FieldExamsRequired.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FieldExamsRequired.swift; path = ToDoListATDash/Model/FieldExamsRequired.swift; sourceTree = SOURCE_ROOT; };
+		F7B5A488076E640C1E39E8E8 /* Pods-ToDoListATDash.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDoListATDash.release.xcconfig"; path = "Pods/Target Support Files/Pods-ToDoListATDash/Pods-ToDoListATDash.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +53,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				925668A0B86703CE8FD4BDD6 /* Pods_ToDoListATDash.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1FAA072E0009A445311F701D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8E9DBA01E3D819809B9E3BB2 /* Pods_ToDoListATDash.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		495E3F18C90836654E47E4DF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B119410CCCAB65E04E82E78B /* Pods-ToDoListATDash.debug.xcconfig */,
+				F7B5A488076E640C1E39E8E8 /* Pods-ToDoListATDash.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		E136B4871CB856420067B7AE = {
 			isa = PBXGroup;
 			children = (
 				E136B4921CB856420067B7AE /* ToDoListATDash */,
 				E136B4911CB856420067B7AE /* Products */,
+				495E3F18C90836654E47E4DF /* Pods */,
+				1FAA072E0009A445311F701D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +98,34 @@
 		E136B4921CB856420067B7AE /* ToDoListATDash */ = {
 			isa = PBXGroup;
 			children = (
+				E1593E911CBC3473002735CA /* A Swift Tour Playground.playground */,
+				E1593E861CB95F0E002735CA /* Model */,
 				E136B4931CB856420067B7AE /* AppDelegate.swift */,
 				E136B4951CB856420067B7AE /* ViewController.swift */,
+				E1593E901CBBC203002735CA /* KeepMe.playground */,
 				E136B4971CB856420067B7AE /* Main.storyboard */,
 				E136B49A1CB856420067B7AE /* Assets.xcassets */,
 				E136B49C1CB856420067B7AE /* LaunchScreen.storyboard */,
 				E136B49F1CB856420067B7AE /* Info.plist */,
+				E1593E8A1CB98ECB002735CA /* TasksViewController.swift */,
+				E1593E8C1CB98EEA002735CA /* TaskListsViewController.swift */,
 			);
 			path = ToDoListATDash;
+			sourceTree = "<group>";
+		};
+		E1593E861CB95F0E002735CA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E1593E851CB95F0E002735CA /* Task.swift */,
+				E1593E881CB96FD9002735CA /* TaskList.swift */,
+				E1D2E05E1CCE6EA5009E4439 /* College.swift */,
+				E1D2E0601CCE6EBB009E4439 /* CollegeList.swift */,
+				E1D2E0641CCE72B5009E4439 /* CollegeFields.swift */,
+				E1D2E0661CCE732A009E4439 /* CollegeControl.swift */,
+				E1D2E06A1CCE7478009E4439 /* FieldExamsRequired.swift */,
+			);
+			name = Model;
+			path = ../Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +135,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E136B4A21CB856420067B7AE /* Build configuration list for PBXNativeTarget "ToDoListATDash" */;
 			buildPhases = (
+				06BC4F77A240A3952C0EE762 /* Check Pods Manifest.lock */,
 				E136B48C1CB856420067B7AE /* Sources */,
 				E136B48D1CB856420067B7AE /* Frameworks */,
 				E136B48E1CB856420067B7AE /* Resources */,
+				73C7293138A9299A1D6FBE94 /* Embed Pods Frameworks */,
+				63787CF35A3F32A514318D3B /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -130,13 +197,70 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		06BC4F77A240A3952C0EE762 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		63787CF35A3F32A514318D3B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ToDoListATDash/Pods-ToDoListATDash-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		73C7293138A9299A1D6FBE94 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ToDoListATDash/Pods-ToDoListATDash-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E136B48C1CB856420067B7AE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1593E891CB96FD9002735CA /* TaskList.swift in Sources */,
 				E136B4961CB856420067B7AE /* ViewController.swift in Sources */,
+				E1593E8B1CB98ECB002735CA /* TasksViewController.swift in Sources */,
+				E1D2E0611CCE6EBB009E4439 /* CollegeList.swift in Sources */,
+				E1593E871CB95F0E002735CA /* Task.swift in Sources */,
+				E1D2E0671CCE732A009E4439 /* CollegeControl.swift in Sources */,
+				E1D2E0651CCE72B5009E4439 /* CollegeFields.swift in Sources */,
+				E1D2E05F1CCE6EA5009E4439 /* College.swift in Sources */,
+				E1D2E06B1CCE7478009E4439 /* FieldExamsRequired.swift in Sources */,
 				E136B4941CB856420067B7AE /* AppDelegate.swift in Sources */,
+				E1593E8D1CB98EEA002735CA /* TaskListsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,6 +369,7 @@
 		};
 		E136B4A31CB856420067B7AE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B119410CCCAB65E04E82E78B /* Pods-ToDoListATDash.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ToDoListATDash/Info.plist;
@@ -256,6 +381,7 @@
 		};
 		E136B4A41CB856420067B7AE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F7B5A488076E640C1E39E8E8 /* Pods-ToDoListATDash.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ToDoListATDash/Info.plist;
@@ -284,6 +410,7 @@
 				E136B4A41CB856420067B7AE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

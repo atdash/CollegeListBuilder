@@ -1,12 +1,16 @@
 //
 //  AppDelegate.swift
-//  ToDoListATDash
+//  RealmTasks
 //
-//  Created by Nicholas Salzman on 4/8/16.
-//  Copyright © 2016 Nicholas Salzman. All rights reserved.
+//  Created by Hossam Ghareeb on 10/12/15.
+//  Copyright © 2015 Hossam Ghareeb. All rights reserved.
 //
 
 import UIKit
+import RealmSwift
+
+
+let uiRealm = try! Realm()
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        print(Realm.Configuration.defaultConfiguration.path!)
+        
         return true
     }
 
