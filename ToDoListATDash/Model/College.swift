@@ -10,15 +10,17 @@ import RealmSwift
 
 class College: Object {
     
-    dynamic var pk = 0 //primary key
-    dynamic var model: CollegeControl!
-    dynamic var fields: CollegeFields!
+    dynamic var admitster_id = 0
+    dynamic var model = ""
     dynamic var isFavorite = false
+    dynamic var name = ""
+    dynamic var examsRequired = ""
+
     
     override static func primaryKey() -> String? {
-        return "pk"
+        return "admitster_id"
     }
-    
+        
 // Specify properties to ignore (Realm won't persist these)
     
 //  override static func ignoredProperties() -> [String] {

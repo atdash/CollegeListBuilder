@@ -30,7 +30,8 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var otherColleges: Results<College>!
     var favAddAction: UIAlertAction!
     
-    
+//    var collegeFields: CollegeFields!
+//    var collegeModel: CollegeControl!
     
     var isEditingMode = false
     
@@ -48,7 +49,7 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         readTasksAndUpateUI()
 
     }
-    
+
     
     // MARK: - User Actions -
     
@@ -147,7 +148,7 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 college = otherColleges[indexPath.row]
             }
             
-            cell?.textLabel?.text = college.fields.name
+            cell?.textLabel?.text = college.name
         }
 
         return cell!
@@ -228,14 +229,13 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 // update mode
                 try! uiRealm.write() {
                     
-                    updatedCollege.fields.name = collegeName!
+                    updatedCollege.name = collegeName!
                     self.readTasksAndUpateUI()
                 }
             }
             else{
-                
                 let newCollege = College()
-                newCollege.fields.name = collegeName!
+                newCollege.name = collegeName!
                 
                 try! uiRealm.write() {
                     
@@ -257,7 +257,7 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
             textField.placeholder = "College Name"
             textField.addTarget(self, action: "taskNameFieldDidChange:", forControlEvents: UIControlEvents.EditingChanged)
             if updatedCollege != nil{
-                textField.text = updatedCollege.fields.name
+                textField.text = updatedCollege.name
             }
         }
         

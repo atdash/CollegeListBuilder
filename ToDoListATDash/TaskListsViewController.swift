@@ -257,10 +257,19 @@ class TaskListsViewController: UIViewController, UITableViewDelegate, UITableVie
             
             //Deletion will go here
             
-            let listToBeDeleted = self.lists[indexPath.row]
-            try! uiRealm.write(){
-                uiRealm.delete(listToBeDeleted)
-                self.readTasksAndUpdateUI()
+            switch self.Track {
+            case .TaskTrack:
+                let listToBeDeleted = self.lists[indexPath.row]
+                try! uiRealm.write(){
+                    uiRealm.delete(listToBeDeleted)
+                    self.readTasksAndUpdateUI()
+                }
+            case .CollegeTrack:
+                let collegeToBeDeleted = self.colleges[indexPath.row]
+                try! uiRealm.write(){
+                    uiRealm.delete(collegeToBeDeleted)
+                    self.readTasksAndUpdateUI()
+                }
             }
         }
         let editAction = UITableViewRowAction(style: UITableViewRowActionStyle.Normal, title: "Edit") { (editAction, indexPath) -> Void in
