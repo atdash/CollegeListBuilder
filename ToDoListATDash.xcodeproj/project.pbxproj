@@ -22,6 +22,7 @@
 		E1D2E0651CCE72B5009E4439 /* CollegeFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D2E0641CCE72B5009E4439 /* CollegeFields.swift */; };
 		E1D2E0671CCE732A009E4439 /* CollegeControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D2E0661CCE732A009E4439 /* CollegeControl.swift */; };
 		E1D2E06B1CCE7478009E4439 /* FieldExamsRequired.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D2E06A1CCE7478009E4439 /* FieldExamsRequired.swift */; };
+		E1D2E06D1CCFDAA4009E4439 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D2E06C1CCFDAA4009E4439 /* Person.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		E1D2E0641CCE72B5009E4439 /* CollegeFields.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CollegeFields.swift; path = ToDoListATDash/Model/CollegeFields.swift; sourceTree = SOURCE_ROOT; };
 		E1D2E0661CCE732A009E4439 /* CollegeControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CollegeControl.swift; path = ToDoListATDash/Model/CollegeControl.swift; sourceTree = SOURCE_ROOT; };
 		E1D2E06A1CCE7478009E4439 /* FieldExamsRequired.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FieldExamsRequired.swift; path = ToDoListATDash/Model/FieldExamsRequired.swift; sourceTree = SOURCE_ROOT; };
+		E1D2E06C1CCFDAA4009E4439 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Person.swift; path = ToDoListATDash/Model/Person.swift; sourceTree = SOURCE_ROOT; };
 		F7B5A488076E640C1E39E8E8 /* Pods-ToDoListATDash.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDoListATDash.release.xcconfig"; path = "Pods/Target Support Files/Pods-ToDoListATDash/Pods-ToDoListATDash.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -123,6 +125,7 @@
 				E1D2E0641CCE72B5009E4439 /* CollegeFields.swift */,
 				E1D2E0661CCE732A009E4439 /* CollegeControl.swift */,
 				E1D2E06A1CCE7478009E4439 /* FieldExamsRequired.swift */,
+				E1D2E06C1CCFDAA4009E4439 /* Person.swift */,
 			);
 			name = Model;
 			path = ../Pods;
@@ -256,6 +259,7 @@
 				E1D2E0611CCE6EBB009E4439 /* CollegeList.swift in Sources */,
 				E1593E871CB95F0E002735CA /* Task.swift in Sources */,
 				E1D2E0671CCE732A009E4439 /* CollegeControl.swift in Sources */,
+				E1D2E06D1CCFDAA4009E4439 /* Person.swift in Sources */,
 				E1D2E0651CCE72B5009E4439 /* CollegeFields.swift in Sources */,
 				E1D2E05F1CCE6EA5009E4439 /* College.swift in Sources */,
 				E1D2E06B1CCE7478009E4439 /* FieldExamsRequired.swift in Sources */,

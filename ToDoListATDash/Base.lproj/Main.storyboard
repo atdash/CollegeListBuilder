@@ -6,10 +6,10 @@
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
-        <!--Task Lists-->
+        <!--College List Builder-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="TaskListsViewController" customModule="ToDoListATDash" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" userLabel="College List Builder" customClass="TaskListsViewController" customModule="ToDoListATDash" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -73,7 +73,7 @@
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <navigationItem key="navigationItem" title="Task Lists" id="OU1-aT-D5r">
+                    <navigationItem key="navigationItem" title="College List Builder" id="OU1-aT-D5r">
                         <barButtonItem key="leftBarButtonItem" systemItem="edit" id="Mb9-2Z-FWY">
                             <connections>
                                 <action selector="didClickOnEditButton:" destination="BYZ-38-t0r" id="LPk-Bx-zDM"/>

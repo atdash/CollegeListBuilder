@@ -223,19 +223,20 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let alertController = UIAlertController(title: title, message: "Add the name of your College.", preferredStyle: UIAlertControllerStyle.Alert)
         let createAction = UIAlertAction(title: doneTitle, style: UIAlertActionStyle.Default) { (action) -> Void in
             
-            let collegeName = alertController.textFields?.first?.text
+            let collegeName = alertController.textFields![0] 
+//            let collegePK = alertController.textFields![1]
             
             if updatedCollege != nil{
                 // update mode
                 try! uiRealm.write() {
                     
-                    updatedCollege.name = collegeName!
+                    updatedCollege.name = collegeName.text!
                     self.readTasksAndUpateUI()
                 }
             }
             else{
                 let newCollege = College()
-                newCollege.name = collegeName!
+                newCollege.name = collegeName.text!
                 
                 try! uiRealm.write() {
                     
@@ -361,7 +362,7 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
             
         }
         
-        let doneAction = UITableViewRowAction(style: UITableViewRowActionStyle.Normal, title: "Done") { (doneAction, indexPath) -> Void in
+        let doneAction = UITableViewRowAction(style: UITableViewRowActionStyle.Normal, title: "Favorite") { (doneAction, indexPath) -> Void in
             // Editing will go here
             var collegeToBeUpdated: College!
             if indexPath.section == 0{
