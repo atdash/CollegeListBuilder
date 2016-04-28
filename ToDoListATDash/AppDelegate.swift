@@ -21,6 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         print(Realm.Configuration.defaultConfiguration.path!)
+//        dataTaskFinishedWithData(readjson("/Users/Nicholas/Documents/Working/Swift/Playgrounds/ToDoListATDash/colleges-two.json"))
+        
+        TryThisJSONRequest()
         
         return true
     }
