@@ -77,6 +77,8 @@ func TryThisJSONRequest() {
                 print(urCollege.admitster_id)
                 print(urCollege.model)
                 print(urCollege.pk)
+                
+                PutThatInTheRealm(urCollege)
             }
         case .Failure(let error):
             print("Request failed with error: \(error)")
