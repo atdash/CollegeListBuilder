@@ -23,7 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print(Realm.Configuration.defaultConfiguration.path!)
 //        dataTaskFinishedWithData(readjson("/Users/Nicholas/Documents/Working/Swift/Playgrounds/ToDoListATDash/colleges-two.json"))
         
-        TryThisJSONRequest()
+        // use this to import an updated colleges.json
+//        TryThisJSONRequest()
         
         return true
     }
