@@ -72,8 +72,8 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
             completedTasks = self.selectedList.tasks.filter("isCompleted = true")
             openTasks = self.selectedList.tasks.filter("isCompleted = false")
         case .CollegeTrack:
-            otherColleges = self.selectedCollege.collegeList.filter("isFavorite = true")
-            favColleges = self.selectedCollege.collegeList.filter("isFavorite = false")
+            otherColleges = self.selectedCollege.collegeList.filter("isFavorite = false")
+            favColleges = self.selectedCollege.collegeList.filter("isFavorite = true")
         }
 
         self.tasksTableView.reloadData()

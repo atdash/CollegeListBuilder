@@ -12,6 +12,7 @@ import RealmSwift
 class Person: Object {
     
     dynamic var name = ""
+    dynamic var email = ""
     
     let favColleges = List<College>()
     let similarColleges = List<College>()
