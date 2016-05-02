@@ -38,6 +38,10 @@ class TaskListsViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func readTasksAndUpdateUI(){
         
+//        let uiRealm = try! Realm()
+        do {
+            let uiRealm = try Realm()
+        
         switch Track {
         case .TaskTrack:
             lists = uiRealm.objects(TaskList)
@@ -46,6 +50,10 @@ class TaskListsViewController: UIViewController, UITableViewDelegate, UITableVie
         }
         self.taskListsTableView.setEditing(false, animated: true)
         self.taskListsTableView.reloadData()
+
+        } catch let error as NSError {
+            print("This is the darn path permissions error \(error)")
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -54,6 +62,22 @@ class TaskListsViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     // MARK: - User Actions -
+    
+    
+    func InitializeNewCollegeList (newCollegeList: CollegeList) {
+        
+        let uiRealm = try! Realm()
+        
+        let allColleges = uiRealm.objects(College)
+        
+        try! uiRealm.write() {
+            for ruColleges in allColleges {
+                newCollegeList.collegeList.append(ruColleges)
+            }   
+        }
+    }
+    
+    
     
     
     @IBAction func didSelectSortCriteria(sender: UISegmentedControl) {
@@ -113,33 +137,37 @@ class TaskListsViewController: UIViewController, UITableViewDelegate, UITableVie
             doneTitle = "Update"
         }
         
+        let uiRealm = try! Realm()
+        
         let alertController = UIAlertController(title: title, message: "Write the name of your colleges list.", preferredStyle: UIAlertControllerStyle.Alert)
         let createAction = UIAlertAction(title: doneTitle, style: UIAlertActionStyle.Default) { (action) -> Void in
             
-            let collegeName = alertController.textFields?.first?.text
+            let collegeListName = alertController.textFields?.first?.text
             
             if updatedCollege != nil{
                 // update mode
                 try! uiRealm.write(){
-                    updatedCollege.name = collegeName!
+                    updatedCollege.name = collegeListName!
                     self.readTasksAndUpdateUI()
                 }
             }
             else{
                 
                 let newCollegeList = CollegeList()
-                newCollegeList.name = collegeName!
+                newCollegeList.name = collegeListName!
                 
                 try! uiRealm.write(){
                     
                     uiRealm.add(newCollegeList)
                     self.readTasksAndUpdateUI()
                 }
+                
+                self.InitializeNewCollegeList(newCollegeList)
             }
             
             
             
-            print(collegeName)
+            print(collegeListName)
         }
         
         alertController.addAction(createAction)
@@ -168,6 +196,8 @@ class TaskListsViewController: UIViewController, UITableViewDelegate, UITableVie
             title = "Update Tasks List"
             doneTitle = "Update"
         }
+        
+        let uiRealm = try! Realm()
         
         let alertController = UIAlertController(title: title, message: "Write the name of your tasks list.", preferredStyle: UIAlertControllerStyle.Alert)
         let createAction = UIAlertAction(title: doneTitle, style: UIAlertActionStyle.Default) { (action) -> Void in
@@ -251,11 +281,14 @@ class TaskListsViewController: UIViewController, UITableViewDelegate, UITableVie
 
         return cell!
     }
-    
+
+    // Handle the 'swipe row' actions here...
     func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
+        
         let deleteAction = UITableViewRowAction(style: UITableViewRowActionStyle.Destructive, title: "Delete") { (deleteAction, indexPath) -> Void in
             
             //Deletion will go here
+            let uiRealm = try! Realm()
             
             switch self.Track {
             case .TaskTrack:
@@ -296,7 +329,6 @@ class TaskListsViewController: UIViewController, UITableViewDelegate, UITableVie
             self.performSegueWithIdentifier("openTasks", sender: self.lists[indexPath.row])
         case .CollegeTrack:
             self.performSegueWithIdentifier("openTasks", sender: self.colleges[indexPath.row])
-//            self.performSegueWithIdentifier("favColleges", sender: self.colleges[indexPath.row])
         }
         
     }
@@ -309,7 +341,7 @@ class TaskListsViewController: UIViewController, UITableViewDelegate, UITableVie
         case .TaskTrack:
             tasksViewController.selectedList = sender as! TaskList
         case .CollegeTrack:
-            tasksViewController.selectedCollege = sender as! CollegeList
+            tasksViewController.selectedCollegeList = sender as! CollegeList
         }
     }
     /*

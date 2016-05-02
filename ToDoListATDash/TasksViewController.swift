@@ -25,7 +25,7 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var completedTasks : Results<Task>!
     var currentCreateAction:UIAlertAction!
     
-    var selectedCollege: CollegeList!
+    var selectedCollegeList: CollegeList!
     var favColleges: Results<College>!
     var otherColleges: Results<College>!
     var favAddAction: UIAlertAction!
@@ -43,7 +43,7 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         case .TaskTrack:
             self.title = selectedList.name
         case .CollegeTrack:
-            self.title = selectedCollege.name
+            self.title = selectedCollegeList.name
         }
 
         readTasksAndUpateUI()
@@ -72,8 +72,8 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
             completedTasks = self.selectedList.tasks.filter("isCompleted = true")
             openTasks = self.selectedList.tasks.filter("isCompleted = false")
         case .CollegeTrack:
-            otherColleges = self.selectedCollege.collegeList.filter("isFavorite = false")
-            favColleges = self.selectedCollege.collegeList.filter("isFavorite = true")
+            otherColleges = self.selectedCollegeList.collegeList.filter("isFavorite = false")
+            favColleges = self.selectedCollegeList.collegeList.filter("isFavorite = true")
         }
 
         self.tasksTableView.reloadData()
@@ -156,6 +156,8 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     
     func displayAlertToAddTask(updatedTask:Task!){
+
+            let uiRealm = try! Realm()
         
             var title = "New Task"
             var doneTitle = "Create"
@@ -220,6 +222,8 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 doneTitle = "Update"
             }
         
+        let uiRealm = try! Realm()
+        
         let alertController = UIAlertController(title: title, message: "Add the name of your College.", preferredStyle: UIAlertControllerStyle.Alert)
         let createAction = UIAlertAction(title: doneTitle, style: UIAlertActionStyle.Default) { (action) -> Void in
             
@@ -240,7 +244,7 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 
                 try! uiRealm.write() {
                     
-                    self.selectedCollege.collegeList.append(newCollege)
+                    self.selectedCollegeList.collegeList.append(newCollege)
                     self.readTasksAndUpateUI()
                 }
             }
@@ -274,6 +278,8 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     
     func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
+        
+        let uiRealm = try! Realm()
 
         switch Track {
         case .TaskTrack:
@@ -382,7 +388,7 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
         }
     }
-
+    
 
     /*
     // MARK: - Navigation

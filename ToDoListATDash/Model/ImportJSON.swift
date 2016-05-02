@@ -266,9 +266,9 @@ func TryThisJSONRequest() {
             
             for urCollege in data.showArray! {
                 print(urCollege.admitster_id)
-                print(urCollege.model)
-                print(urCollege.pk)
-                print(urCollege.examsRequired)
+//                print(urCollege.model)
+//                print(urCollege.pk)
+//                print(urCollege.examsRequired)
                 
                 PutThatInTheRealm(urCollege)
             }

@@ -10,21 +10,36 @@ import UIKit
 import RealmSwift
 
 
-let uiRealm = try! Realm()
+
+//let uiRealm = try! Realm()
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    let uiRealm = try! Realm()
 
-
+    func setDefaultRealmForThisApp() {
+        
+        var config = Realm.Configuration()
+        let currentRealm = "/Users/Nicholas/Documents/Working/Swift/Realms"
+        config.path = currentRealm
+        Realm.Configuration.defaultConfiguration = config
+    }
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        print(Realm.Configuration.defaultConfiguration.path!)
-//        dataTaskFinishedWithData(readjson("/Users/Nicholas/Documents/Working/Swift/Playgrounds/ToDoListATDash/colleges-two.json"))
+        
+
+//        setDefaultRealmForThisApp()
+        let uiRealm = try! Realm()
+        print(uiRealm.path)
+
+//        print(Realm.Configuration.defaultConfiguration.path!)
+//      dataTaskFinishedWithData(readjson("/Users/Nicholas/Documents/Working/Swift/Playgrounds/ToDoListATDash/colleges-two.json"))
         
         // use this to import an updated colleges.json
-//        TryThisJSONRequest()
+        TryThisJSONRequest()
         
         return true
     }
