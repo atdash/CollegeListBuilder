@@ -11,16 +11,6 @@ import RealmSwift
 
 class TaskListsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    enum IsCollegeOrTask {
-        case TaskTrack
-        case CollegeTrack
-    }
-    
-//    var Track = IsCollegeOrTask.TaskTrack
-    var Track = IsCollegeOrTask.CollegeTrack
-
-
-    var lists : Results<TaskList>!
     var colleges: Results<CollegeList>!
     var people: Results<Person>!
     
@@ -43,12 +33,7 @@ class TaskListsViewController: UIViewController, UITableViewDelegate, UITableVie
         do {
             let uiRealm = try Realm()
         
-        switch Track {
-        case .TaskTrack:
-            lists = uiRealm.objects(TaskList)
-        case .CollegeTrack:
             colleges = uiRealm.objects(CollegeList)
-        }
         self.taskListsTableView.setEditing(false, animated: true)
         self.taskListsTableView.reloadData()
 
@@ -101,25 +86,13 @@ class TaskListsViewController: UIViewController, UITableViewDelegate, UITableVie
         
         if sender.selectedSegmentIndex == 0{
             
-            switch Track {
-            case .TaskTrack:
-                // A-Z
-                self.lists = self.lists.sorted("name")
-            case .CollegeTrack:
                 // A-Z
                 self.colleges = self.colleges.sorted("name")
-            }
             
         }
         else{
-            switch Track {
-            case .TaskTrack:
-                // date
-                self.lists = self.lists.sorted("createdAt", ascending:false)
-            case .CollegeTrack:
                 // date
                 self.colleges = self.colleges.sorted("createdAt", ascending:false)
-            }
         }
         self.taskListsTableView.reloadData()
     }
@@ -131,12 +104,7 @@ class TaskListsViewController: UIViewController, UITableViewDelegate, UITableVie
     
     @IBAction func didClickOnAddButton(sender: UIBarButtonItem) {
 
-        switch Track {
-        case .TaskTrack:
-            displayAlertToAddTaskList(nil)
-        case .CollegeTrack:
             displayAlertToAddCollegeList(nil)
-        }
     }
     
     //Enable the create action of the alert only if textfield text is not empty
@@ -206,77 +174,13 @@ class TaskListsViewController: UIViewController, UITableViewDelegate, UITableVie
         
     }
     
-    func displayAlertToAddTaskList(updatedList:TaskList!){
-        
-        var title = "New Tasks List"
-        var doneTitle = "Create"
-        if updatedList != nil{
-            title = "Update Tasks List"
-            doneTitle = "Update"
-        }
-        
-        let uiRealm = try! Realm()
-        
-        let alertController = UIAlertController(title: title, message: "Write the name of your tasks list.", preferredStyle: UIAlertControllerStyle.Alert)
-        let createAction = UIAlertAction(title: doneTitle, style: UIAlertActionStyle.Default) { (action) -> Void in
-            
-            let listName = alertController.textFields?.first?.text
-            
-            if updatedList != nil{
-                // update mode
-                try! uiRealm.write(){
-                    updatedList.name = listName!
-                    self.readTasksAndUpdateUI()
-                }
-            }
-            else{
-                
-                let newTaskList = TaskList()
-                newTaskList.name = listName!
-                
-                try! uiRealm.write(){
-                    
-                    uiRealm.add(newTaskList)
-                    self.readTasksAndUpdateUI()
-                }
-            }
-            
-            
-            
-            print(listName)
-        }
-        
-        alertController.addAction(createAction)
-        createAction.enabled = false
-        self.currentCreateAction = createAction
-        
-        alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
-        
-        alertController.addTextFieldWithConfigurationHandler { (textField) -> Void in
-            textField.placeholder = "Task List Name"
-            textField.addTarget(self, action: "listNameFieldDidChange:", forControlEvents: UIControlEvents.EditingChanged)
-            if updatedList != nil{
-                textField.text = updatedList.name
-            }
-        }
-        
-        self.presentViewController(alertController, animated: true, completion: nil)
-    }
-    
     // MARK: - UITableViewDataSource -
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        switch Track {
-        case .TaskTrack:
-            if let listsTasks = lists{
-                return listsTasks.count
-        }
-        case .CollegeTrack:
             if let listsColleges = colleges{
                 return listsColleges.count
             }
-        }
         return 0
     }
     
@@ -284,18 +188,10 @@ class TaskListsViewController: UIViewController, UITableViewDelegate, UITableVie
         
         let cell = tableView.dequeueReusableCellWithIdentifier("listCell")
         
-        switch Track {
-        case .TaskTrack:
-            let list = lists[indexPath.row]
-            
-            cell?.textLabel?.text = list.name
-            cell?.detailTextLabel?.text = "\(list.tasks.count) Tasks"
-        case .CollegeTrack:
             let college = colleges[indexPath.row]
             
             cell?.textLabel?.text = college.name
             cell?.detailTextLabel?.text = "\(college.collegeList.count) Colleges"
-        }
 
         return cell!
     }
@@ -308,33 +204,17 @@ class TaskListsViewController: UIViewController, UITableViewDelegate, UITableVie
             //Deletion will go here
             let uiRealm = try! Realm()
             
-            switch self.Track {
-            case .TaskTrack:
-                let listToBeDeleted = self.lists[indexPath.row]
-                try! uiRealm.write(){
-                    uiRealm.delete(listToBeDeleted)
-                    self.readTasksAndUpdateUI()
-                }
-            case .CollegeTrack:
                 let collegeToBeDeleted = self.colleges[indexPath.row]
                 try! uiRealm.write(){
                     uiRealm.delete(collegeToBeDeleted)
                     self.readTasksAndUpdateUI()
                 }
-            }
         }
         let editAction = UITableViewRowAction(style: UITableViewRowActionStyle.Normal, title: "Edit") { (editAction, indexPath) -> Void in
         
-            switch self.Track {
-            case .TaskTrack:
-                // Editing will go here
-                let listToBeUpdated = self.lists[indexPath.row]
-                self.displayAlertToAddTaskList(listToBeUpdated)
-            case .CollegeTrack:
                 // Editing will go here
                 let collegeToBeUpdated = self.colleges[indexPath.row]
                 self.displayAlertToAddCollegeList(collegeToBeUpdated)
-            }
         }
         return [deleteAction, editAction]
     }
@@ -342,12 +222,7 @@ class TaskListsViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        switch Track {
-        case .TaskTrack:
-            self.performSegueWithIdentifier("openTasks", sender: self.lists[indexPath.row])
-        case .CollegeTrack:
             self.performSegueWithIdentifier("openTasks", sender: self.colleges[indexPath.row])
-        }
         
     }
     
@@ -355,12 +230,7 @@ class TaskListsViewController: UIViewController, UITableViewDelegate, UITableVie
         
         let tasksViewController = segue.destinationViewController as! TasksViewController
 
-        switch Track {
-        case .TaskTrack:
-            tasksViewController.selectedList = sender as! TaskList
-        case .CollegeTrack:
             tasksViewController.selectedCollegeList = sender as! CollegeList
-        }
     }
     /*
     // MARK: - Navigation
