@@ -14,14 +14,13 @@ class Person: Object {
     dynamic var name = ""
     dynamic var email = ""
     
-    let favColleges = List<College>()
-    let similarColleges = List<College>()
+    let myLists = List<CollegeList>()
     
     dynamic var SAT_Math = 0
     dynamic var SAT_Reading = 0
     dynamic var SAT_Writing = 0
     dynamic var Combined_SAT = 0
-
+    
     
 // Specify properties to ignore (Realm won't persist these)
     

@@ -22,6 +22,7 @@ class TaskListsViewController: UIViewController, UITableViewDelegate, UITableVie
 
     var lists : Results<TaskList>!
     var colleges: Results<CollegeList>!
+    var people: Results<Person>!
     
     var isEditingMode = false
     
@@ -64,7 +65,23 @@ class TaskListsViewController: UIViewController, UITableViewDelegate, UITableVie
     // MARK: - User Actions -
     
     
-    func InitializeNewCollegeList (newCollegeList: CollegeList) {
+    func InitializePersonForList(newCollegeList: CollegeList) {
+        
+        let uiRealm = try! Realm()
+
+        try! uiRealm.write {
+            let person = uiRealm.create(Person.self)
+            person.name = "College List Name"
+            person.email = "email@domain.com"
+            person.myLists.append(newCollegeList)
+            person.SAT_Math = 700
+            person.SAT_Reading = 600
+            person.SAT_Writing = 500
+            uiRealm.add(person)
+        }
+    }
+    
+    func InitializeNewCollegeList(newCollegeList: CollegeList) {
         
         let uiRealm = try! Realm()
         
@@ -163,6 +180,7 @@ class TaskListsViewController: UIViewController, UITableViewDelegate, UITableVie
                 }
                 
                 self.InitializeNewCollegeList(newCollegeList)
+                self.InitializePersonForList(newCollegeList)
             }
             
             

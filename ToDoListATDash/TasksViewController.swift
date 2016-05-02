@@ -378,7 +378,8 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 collegeToBeUpdated = self.otherColleges[indexPath.row]
             }
             try! uiRealm.write() {
-                collegeToBeUpdated.isFavorite = true
+                let isNow = collegeToBeUpdated.isFavorite
+                collegeToBeUpdated.isFavorite = !isNow
                 self.readTasksAndUpateUI()
             }
             

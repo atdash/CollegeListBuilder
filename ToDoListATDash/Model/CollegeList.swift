@@ -12,6 +12,7 @@ class CollegeList: Object {
     
     dynamic var name = ""
     dynamic var createdAt = NSDate()
+    dynamic var owner: Person?
     let collegeList = List<College>()
     
 // Specify properties to ignore (Realm won't persist these)
