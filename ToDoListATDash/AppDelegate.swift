@@ -39,7 +39,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //      dataTaskFinishedWithData(readjson("/Users/Nicholas/Documents/Working/Swift/Playgrounds/ToDoListATDash/colleges-two.json"))
         
         // use this to import an updated colleges.json
-        TryThisJSONRequest()
+//        TryThisJSONRequest()
+//        TryThisJSONRequestUpdate()
         
         return true
     }

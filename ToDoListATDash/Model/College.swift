@@ -10,7 +10,15 @@ import RealmSwift
 
 class College: Object {
     
+    /*
+    *   isInList filters for what colleges to display
+    *   isFavorite is toggled by user
+    *   Favorite colleges are sent to Admitster to generate similar colleges
+    *   Similar colleges are added as isInList, but not favorites
+    */
     dynamic var isFavorite = false
+    dynamic var isInList = false
+    dynamic var admit_likelihood: Float = 0.0
 
     dynamic var control = ""
     dynamic var model = ""
