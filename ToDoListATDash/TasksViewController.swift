@@ -8,7 +8,6 @@
 
 import UIKit
 import RealmSwift
-import RealmSearchViewController
 
 
 class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -23,16 +22,35 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     var isEditingMode = false
     
+    let searchController = UISearchController(searchResultsController: nil)
+    var filteredColleges = [College]()
+    
+    
+    
     @IBOutlet weak var tasksTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
-            self.title = selectedCollegeList.name
+        self.title = selectedCollegeList.name
 
         readTasksAndUpateUI()
 
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        definesPresentationContext = true
+        tasksTableView.tableHeaderView = searchController.searchBar
+        
     }
 
+    
+    func filterContentForSearchText(searchText: String, scope: String = "All") {
+         let uiRealm = try! Realm()
+        filteredColleges = uiRealm.objects(College).filter() { college in
+            return college.name.lowercaseString.containsString(searchText.lowercaseString)
+        }
+        
+        self.readTasksAndUpateUI()
+    }
     
     // MARK: - User Actions -
     
@@ -60,35 +78,51 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     // MARK: - UITableViewDataSource -
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        if searchController.active {
+            return 1
+        }
         return 2
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+        if searchController.active && searchController.searchBar.text != "" {
+            return filteredColleges.count
+        } else {
         if section == 0{
-                return favColleges.count
+            return favColleges.count
         }
             return otherColleges.count
+        }
     }
+    
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
+        if searchController.active {
+            return "Add to Favorite Colleges?"
+        } else {
         if section == 0{
-                return "Favorite Colleges"
+            return "Favorite Colleges"
         }
             return "Other Colleges"
-        
+        }
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         let cell = tableView.dequeueReusableCellWithIdentifier("cell")
         
             var college: College!
-            if indexPath.section == 0{
+        
+            if searchController.active && searchController.searchBar.text != "" {
+                college = filteredColleges[indexPath.row]
+            } else {
+                if indexPath.section == 0 {
                 college = favColleges[indexPath.row]
-            }
-            else{
-                college = otherColleges[indexPath.row]
-            }
-            
+                }
+                else {
+                    college = otherColleges[indexPath.row]
+                }
+        }
+    
             cell?.textLabel?.text = college.name
 
         return cell!
@@ -160,6 +194,19 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
         
         let uiRealm = try! Realm()
+        
+        
+        let addAction = UITableViewRowAction(style: UITableViewRowActionStyle.Normal, title: "Add") { (addAction, indexPath) -> Void in
+            var CollegeToBeAdded: College!
+            CollegeToBeAdded = self.filteredColleges[indexPath.row]
+            
+            try! uiRealm.write() {
+                CollegeToBeAdded.isInList = true
+                self.readTasksAndUpateUI()
+            }
+        }
+        
+        
 
         let deleteAction = UITableViewRowAction(style: UITableViewRowActionStyle.Destructive, title: "Delete") { (deleteAction, indexPath) -> Void in
                 
@@ -211,7 +258,7 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
             
         }
         
-        return [deleteAction, editAction, doneAction]
+        return [addAction, deleteAction, editAction, doneAction]
 
     }
     
@@ -226,4 +273,10 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     */
 
+}
+
+extension TasksViewController: UISearchResultsUpdating {
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
+        filterContentForSearchText(searchController.searchBar.text!)
+    }
 }

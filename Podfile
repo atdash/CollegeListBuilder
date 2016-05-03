@@ -9,5 +9,4 @@ target 'ToDoListATDash' do
 pod 'RealmSwift', '0.98.8'
 pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
 pod 'Alamofire', '~> 3.0.1'
-pod "RealmSearchViewController"
 end
