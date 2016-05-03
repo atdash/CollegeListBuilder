@@ -14,15 +14,10 @@
 		E136B49B1CB856420067B7AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E136B49A1CB856420067B7AE /* Assets.xcassets */; };
 		E136B49E1CB856420067B7AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E136B49C1CB856420067B7AE /* LaunchScreen.storyboard */; };
 		E141D3BC1CD7F05700F4DD82 /* PostFavoriteColleges.swift in Sources */ = {isa = PBXBuildFile; fileRef = E141D3BB1CD7F05700F4DD82 /* PostFavoriteColleges.swift */; };
-		E1593E871CB95F0E002735CA /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1593E851CB95F0E002735CA /* Task.swift */; };
-		E1593E891CB96FD9002735CA /* TaskList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1593E881CB96FD9002735CA /* TaskList.swift */; };
 		E1593E8B1CB98ECB002735CA /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1593E8A1CB98ECB002735CA /* TasksViewController.swift */; };
 		E1593E8D1CB98EEA002735CA /* TaskListsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1593E8C1CB98EEA002735CA /* TaskListsViewController.swift */; };
 		E1D2E05F1CCE6EA5009E4439 /* College.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D2E05E1CCE6EA5009E4439 /* College.swift */; };
 		E1D2E0611CCE6EBB009E4439 /* CollegeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D2E0601CCE6EBB009E4439 /* CollegeList.swift */; };
-		E1D2E0651CCE72B5009E4439 /* CollegeFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D2E0641CCE72B5009E4439 /* CollegeFields.swift */; };
-		E1D2E0671CCE732A009E4439 /* CollegeControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D2E0661CCE732A009E4439 /* CollegeControl.swift */; };
-		E1D2E06B1CCE7478009E4439 /* FieldExamsRequired.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D2E06A1CCE7478009E4439 /* FieldExamsRequired.swift */; };
 		E1D2E06D1CCFDAA4009E4439 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D2E06C1CCFDAA4009E4439 /* Person.swift */; };
 		E1D2E06F1CD02A78009E4439 /* ImportJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D2E06E1CD02A78009E4439 /* ImportJSON.swift */; };
 /* End PBXBuildFile section */
@@ -38,17 +33,11 @@
 		E136B49D1CB856420067B7AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E136B49F1CB856420067B7AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E141D3BB1CD7F05700F4DD82 /* PostFavoriteColleges.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostFavoriteColleges.swift; path = ToDoListATDash/Model/PostFavoriteColleges.swift; sourceTree = SOURCE_ROOT; };
-		E1593E851CB95F0E002735CA /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Task.swift; path = ../ToDoListATDash/Model/Task.swift; sourceTree = "<group>"; };
-		E1593E881CB96FD9002735CA /* TaskList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TaskList.swift; path = ToDoListATDash/Model/TaskList.swift; sourceTree = SOURCE_ROOT; };
 		E1593E8A1CB98ECB002735CA /* TasksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
 		E1593E8C1CB98EEA002735CA /* TaskListsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListsViewController.swift; sourceTree = "<group>"; };
 		E1593E901CBBC203002735CA /* KeepMe.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = KeepMe.playground; path = ../../KeepMe.playground; sourceTree = "<group>"; };
-		E1593E911CBC3473002735CA /* A Swift Tour Playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = "A Swift Tour Playground.playground"; path = "../../A Swift Tour Playground.playground"; sourceTree = "<group>"; };
 		E1D2E05E1CCE6EA5009E4439 /* College.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = College.swift; path = ToDoListATDash/Model/College.swift; sourceTree = SOURCE_ROOT; };
 		E1D2E0601CCE6EBB009E4439 /* CollegeList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CollegeList.swift; path = ToDoListATDash/Model/CollegeList.swift; sourceTree = SOURCE_ROOT; };
-		E1D2E0641CCE72B5009E4439 /* CollegeFields.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CollegeFields.swift; path = ToDoListATDash/Model/CollegeFields.swift; sourceTree = SOURCE_ROOT; };
-		E1D2E0661CCE732A009E4439 /* CollegeControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CollegeControl.swift; path = ToDoListATDash/Model/CollegeControl.swift; sourceTree = SOURCE_ROOT; };
-		E1D2E06A1CCE7478009E4439 /* FieldExamsRequired.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FieldExamsRequired.swift; path = ToDoListATDash/Model/FieldExamsRequired.swift; sourceTree = SOURCE_ROOT; };
 		E1D2E06C1CCFDAA4009E4439 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Person.swift; path = ToDoListATDash/Model/Person.swift; sourceTree = SOURCE_ROOT; };
 		E1D2E06E1CD02A78009E4439 /* ImportJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImportJSON.swift; path = ToDoListATDash/Model/ImportJSON.swift; sourceTree = SOURCE_ROOT; };
 		F7B5A488076E640C1E39E8E8 /* Pods-ToDoListATDash.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDoListATDash.release.xcconfig"; path = "Pods/Target Support Files/Pods-ToDoListATDash/Pods-ToDoListATDash.release.xcconfig"; sourceTree = "<group>"; };
@@ -104,7 +93,6 @@
 		E136B4921CB856420067B7AE /* ToDoListATDash */ = {
 			isa = PBXGroup;
 			children = (
-				E1593E911CBC3473002735CA /* A Swift Tour Playground.playground */,
 				E1593E861CB95F0E002735CA /* Model */,
 				E136B4931CB856420067B7AE /* AppDelegate.swift */,
 				E136B4951CB856420067B7AE /* ViewController.swift */,
@@ -122,13 +110,8 @@
 		E1593E861CB95F0E002735CA /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E1593E851CB95F0E002735CA /* Task.swift */,
-				E1593E881CB96FD9002735CA /* TaskList.swift */,
 				E1D2E05E1CCE6EA5009E4439 /* College.swift */,
 				E1D2E0601CCE6EBB009E4439 /* CollegeList.swift */,
-				E1D2E0641CCE72B5009E4439 /* CollegeFields.swift */,
-				E1D2E0661CCE732A009E4439 /* CollegeControl.swift */,
-				E1D2E06A1CCE7478009E4439 /* FieldExamsRequired.swift */,
 				E1D2E06C1CCFDAA4009E4439 /* Person.swift */,
 				E1D2E06E1CD02A78009E4439 /* ImportJSON.swift */,
 				E141D3BB1CD7F05700F4DD82 /* PostFavoriteColleges.swift */,
@@ -259,16 +242,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1593E891CB96FD9002735CA /* TaskList.swift in Sources */,
 				E136B4961CB856420067B7AE /* ViewController.swift in Sources */,
 				E1593E8B1CB98ECB002735CA /* TasksViewController.swift in Sources */,
 				E1D2E0611CCE6EBB009E4439 /* CollegeList.swift in Sources */,
-				E1593E871CB95F0E002735CA /* Task.swift in Sources */,
-				E1D2E0671CCE732A009E4439 /* CollegeControl.swift in Sources */,
 				E1D2E06D1CCFDAA4009E4439 /* Person.swift in Sources */,
-				E1D2E0651CCE72B5009E4439 /* CollegeFields.swift in Sources */,
 				E1D2E05F1CCE6EA5009E4439 /* College.swift in Sources */,
-				E1D2E06B1CCE7478009E4439 /* FieldExamsRequired.swift in Sources */,
 				E136B4941CB856420067B7AE /* AppDelegate.swift in Sources */,
 				E141D3BC1CD7F05700F4DD82 /* PostFavoriteColleges.swift in Sources */,
 				E1593E8D1CB98EEA002735CA /* TaskListsViewController.swift in Sources */,

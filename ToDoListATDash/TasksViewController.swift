@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import RealmSearchViewController
 
 
 class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -17,6 +18,7 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var selectedCollegeList: CollegeList!
     var favColleges: Results<College>!
     var otherColleges: Results<College>!
+    var inCollegeList: Results<College>!
     var favAddAction: UIAlertAction!
     
     var isEditingMode = false
@@ -44,8 +46,8 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
     func readTasksAndUpateUI(){
         
-            otherColleges = self.selectedCollegeList.collegeList.filter("isFavorite = false")
-            favColleges = self.selectedCollegeList.collegeList.filter("isFavorite = true")
+            otherColleges = self.selectedCollegeList.collegeList.filter("isFavorite = false AND isInList = true")
+            favColleges = self.selectedCollegeList.collegeList.filter("isFavorite = true AND isInList = true")
 
         self.tasksTableView.reloadData()
     }
@@ -172,7 +174,8 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
             }
             
             try! uiRealm.write() {
-                uiRealm.delete(CollegeToBeDeleted)
+//                uiRealm.delete(CollegeToBeDeleted)
+                CollegeToBeDeleted.isInList = false
                 self.readTasksAndUpateUI()
             }
         }
