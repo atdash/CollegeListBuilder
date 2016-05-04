@@ -195,8 +195,12 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         let uiRealm = try! Realm()
         
+        if self.searchController.active {
+        
         
         let addAction = UITableViewRowAction(style: UITableViewRowActionStyle.Normal, title: "Add") { (addAction, indexPath) -> Void in
+            
+   
             var CollegeToBeAdded: College!
             CollegeToBeAdded = self.filteredColleges[indexPath.row]
             
@@ -205,8 +209,8 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 self.readTasksAndUpateUI()
             }
         }
-        
-        
+            return [addAction]
+        } else {
 
         let deleteAction = UITableViewRowAction(style: UITableViewRowActionStyle.Destructive, title: "Delete") { (deleteAction, indexPath) -> Void in
                 
@@ -258,7 +262,8 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
             
         }
         
-        return [addAction, deleteAction, editAction, doneAction]
+        return [deleteAction, editAction, doneAction]
+        }
 
     }
     
