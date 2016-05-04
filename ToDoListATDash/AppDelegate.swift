@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     let uiRealm = try! Realm()
 
+    // This will be useful to test a compressed realm image in the bundle. Current path is a placeholder...
     func setDefaultRealmForThisApp() {
         
         var config = Realm.Configuration()
@@ -40,6 +41,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // use this to import an updated colleges.json
 //        TryThisJSONRequest()
+        
+        // use this to import test data for likelihood... (not current working)
 //        TryThisJSONRequestUpdate()
         
         return true
