@@ -124,6 +124,7 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
     
             cell?.textLabel?.text = college.name
+            cell?.detailTextLabel?.text = String(college.admission_rate)
 
         return cell!
     }
